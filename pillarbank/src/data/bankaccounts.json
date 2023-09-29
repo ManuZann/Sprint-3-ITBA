@@ -1,0 +1,9 @@
+[
+    {"id" : 0, "typeAccount": "Caja de Ahorro", "numberAccount":"0123-4567890 / 34","balance":682500.50},
+    {"id" : 1, "typeAccount": "Cuenta Prestamo", "numberAccount":"5678-1234567 / 09","balance":20000.00},
+    {"id" : 2, "typeAccount": "Cuenta Corriente", "numberAccount":"2468-1357924 / 71","balance":168000.00},
+    {"id" : 3, "typeAccount": "Cuenta Sueldo", "numberAccount":"0125-45432890 / 22","balance":230000.00},
+    {"id" : 4, "typeAccount": "Caja de Ahorro", "numberAccount":"4567-8901234 / 56","balance":75000.50},
+    {"id" : 5, "typeAccount": "Cuenta Prestamo", "numberAccount":"1234-5678901 / 23","balance":12000.00},
+    {"id" : 6, "typeAccount": "Cuenta Corriente", "numberAccount":"1357-2468024 / 68","balance":98000.00}
+]
