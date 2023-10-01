@@ -9,6 +9,11 @@ Esto resulta muy útil para diferentes partes de la aplicación, y ayuda a que e
 Iniciar el servidor en modo desarrollo:
 
 ```bash
+npm i
+# or
+npm install
+
+
 npm run dev
 # or
 yarn dev
