@@ -1,0 +1,43 @@
+[
+  {
+    "idU": "1",
+    "servicios": [
+      { "name": "Factura de Luz", "price": 1500 },
+      { "name": "Factura del Agua", "price": 2580 },
+      { "name": "Netflix", "price": 3100 },
+      { "name": "Telecom", "price": 2900 }
+    ]
+  },
+  {
+    "idU": "2",
+    "servicios": [
+      { "name": "Factura de Luz", "price": 0 },
+      { "name": "Factura del Agua", "price": 2580 },
+      { "name": "Netflix", "price": 3100 },
+      { "name": "Telecom", "price": 2900 }
+    ]
+  },
+  {
+    "idU": "3",
+    "servicios": [
+      { "name": "Factura de Luz", "price": 1500 },
+      { "name": "Twitch", "price": 2580 },
+      { "name": "Amazon Prime", "price": 3100 },
+      { "name": "Personal", "price": 2900 }
+    ]
+  },
+  {
+    "idU": "1",
+    "servicios": [
+      { "name": "YouTube Premium", "price": 3100 },
+      { "name": "Spotify", "price": 2900 }
+    ]
+  },
+  {
+    "idU": "2",
+    "servicios": [
+      { "name": "YouTube Premium", "price": 3100 },
+      { "name": "Spotify", "price": 2900 }
+    ]
+  }
+]

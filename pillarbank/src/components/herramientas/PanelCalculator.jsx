@@ -34,7 +34,7 @@ function PanelCalculator(){
             </SimpleGrid>
             <Stack mt="15px" direction="row" justify="center">
                 {/*Boton calcular para ejecutar la funcion importada cuotasTable y setear el estado tabla con el valor que devuelve*/}
-                <Button colorScheme='teal' size='sm' width={["50%", "20%"]} onClick={() => cuotasTable(monto, cuota, onToggle, setTabla)}>Calcular</Button>
+                <Button colorScheme='teal' size='sm' width={["50%", "20%"]} onClick={() => cuotasTable(monto, cuota, isOpen, onToggle, setTabla)}>Calcular</Button>
             </Stack>
             <hr/>
             <Stack align="center">

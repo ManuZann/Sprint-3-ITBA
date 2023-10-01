@@ -1,0 +1,37 @@
+[{
+    "id": 0,
+    "idU":1,
+    "nombre":"Aldano Andres",
+    "number":2334452234555223,
+    "expiry":"20/10",
+    "cvc":333,
+    "limit":15000
+},
+{
+    "id": 1,
+    "idU":1,
+    "nombre":"Aldano Andres",
+    "number":2334232323432425,
+    "expiry":"21/01",
+    "cvc":342,
+    "limit":1000
+},
+{
+    "id": 2,
+    "idU":2,
+    "nombre":"Nicolas Colombo",
+    "number":2334232323432422,
+    "expiry":"21/01",
+    "cvc":343,
+    "limit":1000
+},
+{
+    "id": 3,
+    "idU":3,
+    "nombre":"Manuel Zanon",
+    "number":23342322324222,
+    "expiry":"11/02",
+    "cvc":524,
+    "limit":100000
+}
+]

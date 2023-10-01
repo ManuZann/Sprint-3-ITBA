@@ -1,30 +1,34 @@
 import React from "react";
-import { Box, Flex, Link, Spacer, Text, Image, Center } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { HStack, Box, Flex, Spacer, Text} from "@chakra-ui/react";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
-import { Outlet } from "react-router-dom";
-import logo from "./logo.png";
+import Image from "next/image"
+import { usePathname } from "next/navigation";
 
-const Navbar = () => {
+
+import Link from "next/link";
+
+export default function Navbar () {
+  const path = usePathname()
   return (
     <>
-    <Box bg="#008080" p={4} color="black">
-      <Flex>
-        <Box alignItems="center" display="flex">
-          <Image src={logo} alt="Logo" w={16} h={16} mr={2} />
-          <Link as={RouterLink} to="/home" fontSize="40" fontWeight="bold">
-            PillarBank
-          </Link>
-        </Box>
-        <Spacer />
-        <Box alignItems="center" display="flex">
-          <DropdownMenu />
-        </Box>
-      </Flex>
-    </Box>
-      <Outlet />
+      <Box bgGradient="linear(to-t, teal.400, teal.600)" boxShadow='xl' p={4} color="black">
+        <Flex>
+          <Box alignItems="center" display="flex">
+            <HStack display="flex" dir="row" wrap="wrap">
+              <Link href={path == "/" || "/contacto" ? "/" : `/${path[1]}`} fontSize="40" fontWeight="bold">
+                <Image src="/image/logo.png" alt="Logo" width={64} height={64} mr={2} />
+              </Link>
+              <Link href={path == "/" || "/contacto" ? "/" : `/${path[1]}`} fontSize="40" fontWeight="bold">
+                <Text fontSize='2xl'>PillarBank</Text>
+              </Link>
+            </HStack>
+          </Box>
+          <Spacer />
+          <Box alignItems="center" display="flex">
+            {path == "/" || path == "/contacto" ? null : <DropdownMenu />}
+          </Box>
+        </Flex>
+      </Box>
     </>
   );
 };
-
-export default Navbar;

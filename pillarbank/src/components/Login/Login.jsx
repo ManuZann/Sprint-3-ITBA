@@ -8,7 +8,6 @@ import {
     FormControl,
     FormLabel,
     Input,
-    Stack,
     Button,
     Checkbox,
     Alert,
@@ -20,6 +19,8 @@ import {
   
   import { useState } from "react";
   import { useRouter } from 'next/navigation'
+  import {validarCredenciales} from '../../utils/filesFunctions'
+import { resolve } from "path";
 
 
   // Login box/space
@@ -57,7 +58,7 @@ import {
       <Box textAlign="center">
         <Heading>Inicia sesión en tu cuenta</Heading>
         <Text>
-          O <Link color="teal">Crea una cuenta</Link>
+          <Link color="teal" href="/">Crea una cuenta</Link>
         </Text>
       </Box>
     );
@@ -70,16 +71,27 @@ import {
     const [error, setError] = useState(false);
     const router = useRouter()
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
       e.preventDefault();
     
-      // Si el usuario y la contraseña son "admin" y "password"
-      if (user === "admin" && password === "admin") {
-        // Inicio de sesión exitoso, redirigir a otra página
-        router.push("/home");
-      } else {
-        setError(true);
+      const userValido = await validarCredenciales(user, password)
+      console.log(userValido)
+      if (userValido) {
+        // Almacena la información del usuario en sessionStorage
+        const usuario = { nombre: userValido.nombre, usuario: userValido.usuario, correo: userValido.correo, id: userValido.id };
+        sessionStorage.setItem('usuario', JSON.stringify(usuario));
+      
+        // Redirige a la página de inicio o a donde desees
+        router.push(
+          {
+            pathname: "/[idUser]/",
+            query: { idUser: userValido.id },
+          },
+          undefined,
+          { shallow: true }
+        );
       }
+      else{setError(true)}
     };
   
     return (
@@ -111,7 +123,7 @@ import {
               </Checkbox>
             </Box>
             <Box>
-              <Link color="teal">Olvidaste tu contraseña?</Link>
+              <Link color="teal" href="/">Olvidaste tu contraseña?</Link>
             </Box>
           </HStack>
           <Button colorScheme="teal" width="full" mt="4" type="submit">

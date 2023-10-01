@@ -1,11 +1,11 @@
 import { Tr, Td } from "@chakra-ui/react"
 
-function cuotasTable(monto, cuotas, onToggle, setTabla){
+function cuotasTable(monto, cuotas, isOpen, onToggle, setTabla){
     //Condicional para evitar la ejecucion sin datos necesarios
     if(!monto || !cuotas) return alert("Ingrese los datos requeridos.")
     
     //Funcion toggle de animacion de la tabla
-    onToggle()
+    isOpen? null : onToggle()
 
     //Calculo de Cuota, Saldo e Interes
     let tasaMensual = 9.83 / 100
